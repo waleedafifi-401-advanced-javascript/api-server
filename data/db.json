@@ -1,0 +1,66 @@
+{
+  "categories": [
+    {
+      "name": "Test",
+      "display_name": "test",
+      "description": "WWaaleed testing api",
+      "id": 3
+    },
+    {
+      "name": "Test",
+      "display_name": "test",
+      "description": "WWaaleed testing api",
+      "id": 4
+    },
+    {
+      "category": "test",
+      "name": "test",
+      "display_name": "WWaaleed testing api",
+      "description": "test",
+      "id": 5
+    },
+    {
+      "name": "bees",
+      "display_name": "Bees $",
+      "description": "Healthy 100%",
+      "id": 6
+    }
+  ],
+  "products": [
+    {
+      "category": "test",
+      "name": "test",
+      "display_name": "WWaaleed testing api",
+      "description": "test",
+      "id": 3
+    },
+    {
+      "category": "Sweets",
+      "name": "candy_bar",
+      "display_name": "Healthy candy bar",
+      "description": "100% healthy, with natural ingrediant",
+      "id": 4
+    },
+    {
+      "category": "sweet",
+      "name": "Sweet bar",
+      "display_name": "100% healthy sweet bar",
+      "description": "Just enjoy eating it",
+      "id": 5
+    },
+    {
+      "category": "test",
+      "name": "test",
+      "display_name": "WWaaleed testing api",
+      "description": "test",
+      "id": 6
+    },
+    {
+      "category": "test",
+      "name": "test",
+      "display_name": "WWaaleed testing api",
+      "description": "test",
+      "id": 7
+    }
+  ]
+}
