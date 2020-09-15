@@ -9,7 +9,7 @@
     "url" : "http://localhost:3000"
   } ],
   "paths" : {
-    "/categories/2" : {
+    "/categories/5f60ac288f45f42e441b04ba" : {
       "get" : {
         "description" : "Auto generated using Swagger Inspector",
         "responses" : {
@@ -60,7 +60,7 @@
           }
         },
         "responses" : {
-          "200" : {
+          "201" : {
             "description" : "Auto generated using Swagger Inspector",
             "content" : {
               "application/json; charset=utf-8" : {
@@ -187,14 +187,14 @@
               },
               "examples" : {
                 "0" : {
-                  "value" : "{\n    \"name\": \"sweet_bar\", \"display_name\": \"Sweet bar\", \"description\": \"None\"\n}"
+                  "value" : "{\n    \"name\": \"bees\", \"display_name\": \"Bees\", \"description\": \"None\"\n}"
                 }
               }
             }
           }
         },
         "responses" : {
-          "200" : {
+          "201" : {
             "description" : "Auto generated using Swagger Inspector",
             "content" : {
               "application/json; charset=utf-8" : {

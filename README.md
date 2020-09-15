@@ -1,11 +1,11 @@
 # api-server
-In this lab, we’ll be using a moving away from `json-server` and creating a “real” API server of our own, using Express. Our express server will be coded for modularity and performance. You will replicate the input/output of `json-server` but storing data in memory to simulate full CRUD functionality, but without persistence.
+In this 3rd phase of development, we’ll be modularizing our server, making it easier to manage as well as adding a much needed persistence layer, saving all API data to a Mongo database.
 
 
  ## Links and Resources
 - SwaggerHub : 
    - [Product hub Link](https://app.swaggerhub.com/apis/wafifi/products/0.1)
-   - [Categories hub Link](https://app.swaggerhub.com/apis/wafifi/categories/0.1)
+   - [Categories hub Link](https://app.swaggerhub.com/apis/wafifi/class08-categoory/0.1)
 - [submission PR/lab-06 ](https://github.com/waleedafifi-401-advanced-javascript/api-server/pull/3)
  
 
@@ -16,9 +16,18 @@ In this lab, we’ll be using a moving away from `json-server` and creating a �
 - install nodemon `npm i nodemon --dev`
 - install jest `npm i jest --dev`
 - install supertest `npm i supertest --dev`
+- install eslint `npm i eslint --dev`
+- install morgan `npm i morgan`
+- install supergoose `npm i @code-fellows/supergoose --dev`
+
 
 * edit `package.json` where `script` -> `"test": "jest --coverage --verbose"`
+* edit `package.json` where `script` -> 
+   ```
+       "lint:js": "eslint './**/*.js' --ignore-pattern node_modules/",
+       "lint:js:fix": "eslint './**/*.js' --ignore-pattern node_modules/ --fix"
 
+   ```
 ## How to initialize/run your application (where applicable)
 
 * `json-server --watch ./data/db.json`
@@ -35,6 +44,7 @@ In this lab, we’ll be using a moving away from `json-server` and creating a �
        ]
    } 
    ```
+
 * Logger will be like bottom
 ```
 __REQUEST__ POST /products 9/14/2020 10:19:50 PM
@@ -44,8 +54,6 @@ __REQUEST__ PUT /products/2 9/14/2020 10:20:16 PM
 __REQUEST__ PATCH /products/2 9/14/2020 10:20:28 PM
 __REQUEST__ DELETE /products/2 9/14/2020 10:20:39 PM
 ```
-
-
 
 ### http request
 ```
@@ -58,10 +66,28 @@ http://loocalhost:3000/products/1 {GET, PUT, PATCH}
 ### Testing
 - `npm run test`
 - Test files
-   - `500.test.js`
    - `logger.test.js`
    - `server.test.js`
 
+### Models file
+- model.js
+- products
+   - products.collectios.js
+   - products.schema.js
+- categories
+   - categories.collectios.js
+   - categories.schema.js
+
+### Routes
+1. product.js
+2. categories.js
+
+### eslint CLI command
+```
+   npm run lint:js // Show what need to fix
+   npm run lint:js:fix // Fix lint error
+
+```
 ## UML
 
-![UML Diagrame ](assets/uml1.jpg)
+![UML Diagrame ](assets/uml2.jpg)

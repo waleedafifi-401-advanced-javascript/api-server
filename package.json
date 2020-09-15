@@ -11,8 +11,9 @@
     "test": "jest --coverage --verbose",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "lint": "eslint '**/*.js' ",
-    "fix-lint": "eslint '**/*.js' --fix"
+    "lint:js": "eslint './**/*.js' --ignore-pattern node_modules/",
+    "lint:js:fix": "eslint './**/*.js' --ignore-pattern node_modules/ --fix"
+
   },
   "repository": {
     "type": "git",
@@ -25,12 +26,18 @@
   },
   "homepage": "https://github.com/waleedafifi-401-advanced-javascript/api-server#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "eslint": "^7.9.0",
     "express": "^4.17.1",
     "jest": "^26.4.2",
     "json-server": "^0.16.1",
+    "mongoose": "^5.10.5",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.4",
     "supertest": "^4.0.2"
+  },
+  "devDependencies": {
+    "@code-fellows/supergoose": "^1.0.11",
+    "eslint": "^7.9.0"
   }
 }
