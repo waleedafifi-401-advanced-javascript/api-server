@@ -1,12 +1,14 @@
 # api-server
-In this 3rd phase of development, we’ll be modularizing our server, making it easier to manage as well as adding a much needed persistence layer, saving all API data to a Mongo database.
+![coverage](https://img.shields.io/badge/coverage-100%25-yellowgreen) ![version](https://img.shields.io/badge/version-0.0.4-blue) ![TEST](https://img.shields.io/badge/Test-100%-brightgreen)
+In this final phase, we’ll be making our API easier to manage, and much more extensible, allowing for it to automatically recognize new data models, backed by any database type. We’ll also be preparing it for delivery with a full suite of documentation, tests, and a permanent deployment
 
+**Author** _Waleed A. Afifi_
 
  ## Links and Resources
 - SwaggerHub : 
    - [Product hub Link](https://app.swaggerhub.com/apis/wafifi/products/0.1)
    - [Categories hub Link](https://app.swaggerhub.com/apis/wafifi/class08-categoory/0.1)
-- [submission PR/lab-06 ](https://github.com/waleedafifi-401-advanced-javascript/api-server/pull/3)
+- [submission PR/lab-09 ](https://github.com/waleedafifi-401-advanced-javascript/api-server/pull/5)
  
 
 ### Setup
@@ -47,26 +49,24 @@ In this 3rd phase of development, we’ll be modularizing our server, making it 
 
 * Logger will be like bottom
 ```
-__REQUEST__ POST /products 9/14/2020 10:19:50 PM
-__REQUEST__ GET /products 9/14/2020 10:20:02 PM
-__REQUEST__ GET /products/2 9/14/2020 10:20:07 PM
-__REQUEST__ PUT /products/2 9/14/2020 10:20:16 PM
-__REQUEST__ PATCH /products/2 9/14/2020 10:20:28 PM
-__REQUEST__ DELETE /products/2 9/14/2020 10:20:39 PM
+GET /categories 200 44.771 ms - 448
+POST /categories 200 44.771 ms - 448
+PUT /categories/5f60ac298f45f42e441b04bb 200 44.771 ms - 448
+PATCH /categories/5f60ac298f45f42e441b04bb 200 44.771 ms - 448
+DELETE /categories/5f60ac298f45f42e441b04bb 200 44.771 ms - 448
 ```
 
 ### http request
 ```
 http://loocalhost:3000/categories {GET, POST}
-http://loocalhost:3000/categories/1 {GET, PUT, PATCH}
+http://loocalhost:3000/categories/5f60ac298f45f42e441b04bb {GET, PUT, PATCH}
 http://loocalhost:3000/products {GET, POST}
-http://loocalhost:3000/products/1 {GET, PUT, PATCH}
+http://loocalhost:3000/products/5f60ac298f45f42e441b04bb {GET, PUT, PATCH}
 ```
  
 ### Testing
 - `npm run test`
 - Test files
-   - `logger.test.js`
    - `server.test.js`
 
 ### Models file
@@ -79,8 +79,11 @@ http://loocalhost:3000/products/1 {GET, PUT, PATCH}
    - categories.schema.js
 
 ### Routes
-1. product.js
-2. categories.js
+1. api-v1.js
+   * params.js
+
+##### Routing work through
+App. now deal with all route from one place api-v1.js handle all route `POST/GET/PUT/PATCH/DELETE` -> require params.js to handle model files and return the model class to api
 
 ### eslint CLI command
 ```
@@ -90,4 +93,4 @@ http://loocalhost:3000/products/1 {GET, PUT, PATCH}
 ```
 ## UML
 
-![UML Diagrame ](assets/uml2.jpg)
+![UML Diagrame ](assets/uml3.jpg)
