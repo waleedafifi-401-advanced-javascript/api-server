@@ -20,10 +20,11 @@ let categoryObj = {
   description: 'All kind of cactus only without succulents',
 };
 
+
 describe('Server module', () => {
   it('Server error status code 404', () => {
     return mockRequest
-      .get('/no-route').then(results => {
+      .get('/').then(results => {
         expect(results.status).toBe(404);
       });
   });
@@ -34,11 +35,11 @@ describe('Server module', () => {
     console.log('data.body : ', data.body);
     const record = data.body;
     const productItemResponse = await mockRequest.get(`/products`);
-    const productItem = productItemResponse.body.resutl[0];
+    const productItem = productItemResponse.body.result;
     // console.log('allProduct: ', productItem);
 
     Object.keys(productObj).forEach(key => {
-      expect(productItem[key]).toEqual(productObj[key]);
+      expect(productItem[0][key]).toEqual(productObj[key]);
     });
   });
 
@@ -92,7 +93,7 @@ describe('Server module', () => {
       });
   });
 
-  it('Check status code 200 for products route and update using patch product by id', () => {
+  it('Check status code 201 for products route and update using patch product by id', () => {
     let obj = {
       name: 'sweet_bar',
       display_name: 'Sweet bar',
@@ -108,7 +109,7 @@ describe('Server module', () => {
           .patch(`/products/${data.body._id}`)
           .send(obj)
           .then(record => {
-            expect(record.statusCode).toBe(200);
+            expect(record.statusCode).toBe(201);
             Object.keys(productObj).forEach(key => {
               expect(record.body[key]).toStrictEqual(obj[key]);
             });
@@ -150,8 +151,8 @@ describe('Server module', () => {
     const data = await mockRequest.post('/categories').send(categoryObj);
     console.log('data.body : ', data.body);
     const record = data.body;
-    const cateegoryItemResponse = await mockRequest.get(`/categories`);
-    const categoryItem = cateegoryItemResponse.body.resutl[0];
+    const categoryItemResponse = await mockRequest.get(`/categories`);
+    const categoryItem = categoryItemResponse.body.result[0];
     Object.keys(categoryObj).forEach(key => {
       expect(categoryItem[key]).toEqual(categoryObj[key]);
     });
@@ -209,7 +210,7 @@ describe('Server module', () => {
           .patch(`/categories/${data.body._id}`)
           .send(obj)
           .then(record => {
-            expect(record.statusCode).toBe(200);
+            expect(record.statusCode).toBe(201);
             Object.keys(categoryObj).forEach(key => {
               expect(record.body[key]).toStrictEqual(obj[key]);
             });
