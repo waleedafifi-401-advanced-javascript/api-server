@@ -1,5 +1,5 @@
 # api-server
-![coverage](https://img.shields.io/badge/coverage-100%25-yellowgreen) ![version](https://img.shields.io/badge/version-0.0.4-blue) ![TEST](https://img.shields.io/badge/Test-100%-brightgreen)
+![coverage](https://img.shields.io/badge/coverage-100%25-yellowgreen) ![version](https://img.shields.io/badge/version-0.0.4-blue) ![TEST](https://img.shields.io/badge/Test-100-brightgreen)
 
 In this final phase, we’ll be making our API easier to manage, and much more extensible, allowing for it to automatically recognize new data models, backed by any database type. We’ll also be preparing it for delivery with a full suite of documentation, tests, and a permanent deployment
 
