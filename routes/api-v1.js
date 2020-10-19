@@ -26,7 +26,7 @@ function getHandler(req, res, next) {
     .then(record => {
       res.status(200).json({
         count: record.length,
-        result: record,
+        results: record,
       });
     }).catch(next);
 }
